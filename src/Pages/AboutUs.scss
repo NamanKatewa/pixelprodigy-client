@@ -1,0 +1,35 @@
+@import "/src/variable.scss";
+
+.aboutus {
+    display: flex;
+    flex-direction: column;
+    padding: $padding;
+    gap: $gap;
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    span {
+        display: inline;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    div {
+        padding: $padding;
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .aboutus {
+        text-align: justify;
+    }
+}

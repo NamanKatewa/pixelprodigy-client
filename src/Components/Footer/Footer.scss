@@ -12,8 +12,18 @@
 
     .links {
         display: flex;
+        flex-wrap: wrap;
         padding: $padding;
         gap: $gap;
+        font-size: 15px;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            color: $secondary-color;
+            text-wrap: wrap;
+            text-decoration: none;
+        }
     }
 
     hr {

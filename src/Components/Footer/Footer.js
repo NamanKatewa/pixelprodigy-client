@@ -14,17 +14,17 @@ const Footer = () => {
       Transforming walls, One Poster at a time.
       <br />
       <div className="links">
-        <Link>About</Link>
+        <Link to="/about">About</Link>
         <hr />
-        <Link>Contact</Link>
+        <Link to="/contact">Contact</Link>
         <hr />
-        <Link>Privacy Policy</Link>
+        <Link to="privacypolicy">Privacy Policy</Link>
         <hr />
-        <Link>Terms of Service</Link>
+        <Link to="tos">Terms of Service</Link>
         <hr />
-        <Link>Shipping, Cancellation and Refund Policy</Link>
+        <Link to="policy">Shipping, Cancellation and Refund Policy</Link>
         <hr />
-        <Link>FAQ</Link>
+        <Link to="faq">FAQ</Link>
       </div>
     </div>
   );

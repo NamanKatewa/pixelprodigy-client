@@ -1,0 +1,29 @@
+@import "/src/variable.scss";
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    padding: $padding;
+    gap: $gap;
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    span {
+        display: inline;
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    div {
+        padding: $padding;
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
+    }
+}
