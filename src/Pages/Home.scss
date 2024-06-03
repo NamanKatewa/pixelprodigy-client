@@ -1,0 +1,10 @@
+@import "/src/variable.scss";
+
+.home {
+    .top {
+        padding: $padding;
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
+    }
+}

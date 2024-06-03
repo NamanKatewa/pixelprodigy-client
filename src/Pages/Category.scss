@@ -1,0 +1,41 @@
+@import "/src/variable.scss";
+
+.category {
+    padding: $padding;
+
+    .products {
+        display: flex;
+        gap: $gap;
+        flex-wrap: wrap;
+    }
+
+    .pages {
+        padding: $padding;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            padding: $padding;
+            border: $border-width-small solid $secondary-color;
+            background-color: inherit;
+            border-radius: $border-radius;
+            display: flex;
+            align-items: center;
+            gap: $gap;
+        }
+
+        .enabled {
+            background-color: $secondary-color;
+            color: $primary-color;
+            cursor: pointer;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .category {
+        .products {
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@import "/src/variable.scss";
+
+.navbar {
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    font-size: $font-small;
+
+    .left {
+        padding-left: $padding;
+        display: flex;
+        gap: $gap;
+        align-items: center;
+
+        img {
+            width: $logo-width;
+        }
+
+        .link {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover {
+                color: $accent-color-1;
+            }
+        }
+
+    }
+
+    .center {
+        img {
+            width: $logo-text-width;
+        }
+    }
+
+    .right {
+        padding-right: $padding;
+        display: flex;
+        gap: $gap;
+        align-items: center;
+
+        .item {
+            color: inherit;
+            position: relative;
+            cursor: pointer;
+
+            &:hover {
+                color: $accent-color-1;
+                z-index: 1;
+            }
+
+            span {
+                width: 20px;
+                height: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $secondary-color;
+                border-radius: 50%;
+                font-weight: 700;
+                font-size: $font-extra-small;
+                color: $primary-color;
+                position: absolute;
+                top: -4px;
+                right: -10px;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        .center {
+            display: none;
+        }
+    }
+}

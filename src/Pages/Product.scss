@@ -1,0 +1,231 @@
+@import "/src/variable.scss";
+
+.product {
+    .details {
+        display: flex;
+
+        .images {
+            padding: $padding;
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: $gap;
+
+            .title {
+                display: flex;
+                gap: $gap;
+
+                .poster {
+                    flex: 1;
+                    height: 100%;
+
+                    img {
+                        border-radius: $border-radius;
+                        width: 100%;
+                    }
+                }
+
+                .name {
+                    position: relative;
+                    padding: $padding;
+                    border-radius: $border-radius;
+                    background-color: $secondary-color;
+                    color: $primary-color;
+                    flex: 2;
+                    display: flex;
+                    flex-direction: column;
+                    gap: $gap;
+
+                    .like {
+                        position: absolute;
+                        right: $position-small;
+                        top: $position-small;
+                        border: $border-width-small solid;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        padding: $padding-medium;
+                        cursor: pointer;
+                    }
+
+                    .description {
+                        border: $border-width-small solid $primary-color;
+                        padding: $padding;
+                        border-radius: $border-radius;
+                        display: flex;
+                        flex-direction: column;
+                        gap: $gap-small;
+
+                        h3 {
+                            font-weight: 600;
+                        }
+
+                        ul {
+                            list-style: inside;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+
+            .mockup {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+        }
+
+        .options {
+            padding: $padding;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: $gap;
+
+            .select {
+                display: flex;
+                flex-direction: column;
+                gap: $gap;
+
+                h3 {
+                    span {
+                        font-weight: 400;
+                    }
+                }
+
+                .selectoptions {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: $gap;
+
+                    .option {
+                        cursor: pointer;
+                        padding: $padding-medium $padding;
+                        border: $border-width-small solid $secondary-color;
+                        border-radius: $border-radius;
+                    }
+
+                    .black {
+                        border: 3px solid transparent;
+                        padding: 0;
+                        width: 30px;
+                        height: 30px;
+                        background-color: black;
+                    }
+
+                    .white {
+                        border: 3px solid transparent;
+                        padding: 0;
+                        width: 30px;
+                        height: 30px;
+                        background-color: white;
+                    }
+
+                    .yellow {
+                        border: 3px solid transparent;
+                        padding: 0;
+                        width: 30px;
+                        height: 30px;
+                        background-color: yellow;
+                    }
+
+                    .olivegreen {
+                        border: 3px solid transparent;
+                        padding: 0;
+                        width: 30px;
+                        height: 30px;
+                        background-color: olive;
+                    }
+
+                    .royalblue {
+                        border: 3px solid transparent;
+                        padding: 0;
+                        width: 30px;
+                        height: 30px;
+                        background-color: royalblue;
+                    }
+
+                    .green {
+                        border: 3px solid transparent;
+                        padding: 0;
+                        width: 30px;
+                        height: 30px;
+                        background-color: green;
+                    }
+
+                    .color {
+                        border: 3px solid;
+                    }
+
+                    .active {
+                        background-color: $secondary-color;
+                        color: $primary-color;
+                    }
+                }
+            }
+
+            .cart {
+                display: flex;
+                gap: $gap;
+                align-items: center;
+                justify-content: space-between;
+
+                .quantity {
+                    border: $border-width-small solid $secondary-color;
+                    border-radius: $border-radius;
+                    flex: 1;
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    hr {
+                        border: $border-width-small solid $secondary-color;
+                    }
+
+                    span {
+                        flex: 1;
+                        font-weight: 700;
+                        padding: $padding-medium;
+                        text-align: center;
+                    }
+
+                    .icon {
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        padding: $padding-medium;
+                        width: 100%;
+                    }
+                }
+
+                .addtocart {
+                    cursor: pointer;
+                    flex: 1;
+                    background-color: $secondary-color;
+                    color: $primary-color;
+                    padding: $padding-medium;
+                    border-radius: $border-radius;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .product {
+
+        .details {
+            flex-direction: column;
+
+            .images {
+                flex-direction: column-reverse;
+
+                .title {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}

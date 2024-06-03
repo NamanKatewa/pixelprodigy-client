@@ -1,0 +1,46 @@
+@import "/src/variable.scss";
+
+.search {
+    padding: $padding;
+
+    .input {
+        display: flex;
+        width: 100%;
+        border-bottom: $border-width-small solid;
+
+        input {
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            font-size: $font-medium;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        span {
+            cursor: pointer;
+            font-size: $font-medium;
+        }
+    }
+
+    .results {
+        padding: $padding;
+
+        .info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: $gap;
+            padding: $padding;
+        }
+    }
+
+}

@@ -1,0 +1,22 @@
+@import "/src/variable.scss";
+
+.footer {
+    border-top: $border-width-medium solid;
+    padding: $padding;
+    text-align: justify;
+    font-size: $font-medium;
+
+    span {
+        color: $accent-color-1;
+    }
+
+    .links {
+        display: flex;
+        padding: $padding;
+        gap: $gap;
+    }
+
+    hr {
+        border: $border-width-small solid $secondary-color;
+    }
+}

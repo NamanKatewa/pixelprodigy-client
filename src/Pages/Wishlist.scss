@@ -1,0 +1,38 @@
+@import "/src/variable.scss";
+
+.wishlist {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    padding: $padding;
+
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $padding;
+
+        button {
+            padding: $padding;
+            border: $border-width-medium solid $secondary-color;
+            background-color: transparent;
+            border-radius: $border-radius;
+            cursor: pointer;
+        }
+    }
+
+    .products {
+        display: flex;
+        padding: $padding;
+        flex-wrap: wrap;
+        gap: $gap;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .wishlist {
+        .products {
+            justify-content: center;
+        }
+    }
+}

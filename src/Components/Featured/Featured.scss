@@ -1,0 +1,53 @@
+@import "/src/variable.scss";
+
+.featured {
+    margin: $margin;
+    height: 800px;
+    position: relative;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .info {
+        color: $secondary-color;
+        position: absolute;
+        bottom: $position-small;
+        left: $position-small;
+        background-color: $primary-color;
+        border-radius: $border-radius;
+        padding: $padding;
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
+
+
+        .content {
+            display: flex;
+            gap: $gap;
+
+            hr {
+                border: $border-width-small solid $accent-color-2;
+                border-radius: $border-radius;
+            }
+
+            .item {
+                text-align: center;
+            }
+        }
+
+        a {
+            background-color: $secondary-color;
+            color: $accent-color-1;
+            text-decoration: none;
+            padding: $padding;
+            border-radius: $border-radius;
+            width: fit-content;
+            text-align: center;
+        }
+    }
+}

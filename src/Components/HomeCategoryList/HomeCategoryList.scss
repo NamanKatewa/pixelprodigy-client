@@ -1,0 +1,23 @@
+@import "/src/variable.scss";
+
+.homecategory {
+    display: flex;
+    gap: $gap;
+    flex-direction: column;
+
+    .details {
+        display: flex;
+        justify-content: space-between;
+
+        .all {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
+    .list {
+        display: flex;
+        gap: $gap;
+        overflow-x: scroll;
+    }
+}

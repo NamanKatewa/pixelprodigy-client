@@ -1,0 +1,14 @@
+@import "/src/variable.scss";
+
+.similar {
+    padding: $padding;
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+
+    .products {
+        display: flex;
+        gap: $gap;
+        overflow-x: scroll;
+    }
+}

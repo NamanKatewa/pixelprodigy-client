@@ -1,0 +1,53 @@
+@import "/src/variable.scss";
+
+.homeproduct {
+    position: relative;
+    min-width: 500px;
+    max-width: 500px;
+    height: 700px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .gradient {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: linear-gradient(to bottom, #00000000, #00000000, #00000000, #00000098, #000000c3);
+    }
+
+    .info {
+        position: absolute;
+        bottom: $position-small;
+        left: $position-small;
+        color: #f9fafa;
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
+
+        a {
+            background-color: $primary-color;
+            color: $secondary-color;
+            text-decoration: none;
+            padding: $padding;
+            border-radius: $border-radius;
+            width: fit-content;
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .homeproduct {
+        min-width: 300px;
+        max-width: 300px;
+        height: 500px;
+    }
+}
