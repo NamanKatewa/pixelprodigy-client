@@ -26,6 +26,15 @@ const Policy = () => {
         <p>To communicate with you about your orders, inquiries.</p>
       </div>
       <div>
+        <h2>Your rights relating to your data Right to Review</h2>
+        <p>
+          You can review the data provided by you and can request us to correct
+          or amend such data (to the extent feasible, as determined by us). That
+          said, we will not be responsible for the authenticity of the data or
+          information provided by you.
+        </p>
+      </div>
+      <div>
         <h2>Protection of Your Information</h2>
         <p>
           We implement various security measures to ensure the safety of your
