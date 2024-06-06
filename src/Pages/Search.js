@@ -1,6 +1,5 @@
 import "./Search.scss";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import ProductCard from "../Components/ProductCard/ProductCard";
 import axios from "axios";
 import { server } from "../variables";
@@ -9,14 +8,13 @@ const Search = () => {
   const [term, setTerm] = useState("");
   const [products, setProducts] = useState();
 
-  async function getProducts() {
-    if (term) {
-      const data = await axios.get(`${server}/data/search?query=${term}`);
-      setProducts(data.data);
-    }
-  }
-
   useEffect(() => {
+    async function getProducts() {
+      if (term) {
+        const data = await axios.get(`${server}/data/search?query=${term}`);
+        setProducts(data.data);
+      }
+    }
     getProducts();
   }, [term]);
 

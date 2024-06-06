@@ -14,8 +14,9 @@ import ContactUs from "./Pages/ContactUs";
 import Policy from "./Pages/Policy";
 import Tos from "./Pages/Tos";
 import Wishlist from "./Pages/Wishlist";
-import Order from "./Pages/Order";
 import PaymentPolicy from "./Pages/PaymentPolicy";
+import Faq from "./Pages/Faq";
+import Checkout from "./Pages/Checkout";
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -23,7 +24,6 @@ import { CartProvider } from "./context/cartContext";
 import { ShowCartProvider } from "./context/showCartContext";
 import { WishlistProvider } from "./context/wishlistContext";
 import { Toaster } from "react-hot-toast";
-import Faq from "./Pages/Faq";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -70,8 +70,8 @@ const router = createBrowserRouter([
         element: <Wishlist />,
       },
       {
-        path: "/order",
-        element: <Order />,
+        path: "/checkout",
+        element: <Checkout />,
       },
       {
         path: "/about",

@@ -12,16 +12,15 @@ const Category = () => {
   const [page, setPage] = useState(1);
   const { id } = useParams();
 
-  async function getData() {
-    const categories = await axios.get(
-      `${server}/data/category/${id}?page=${page}&size=10`
-    );
-    setData(categories.data);
-  }
-
   useEffect(() => {
+    async function getData() {
+      const categories = await axios.get(
+        `${server}/data/category/${id}?page=${page}&size=10`
+      );
+      setData(categories.data);
+    }
     getData();
-  }, [page]);
+  }, [page, id]);
 
   return (
     <div className="category">

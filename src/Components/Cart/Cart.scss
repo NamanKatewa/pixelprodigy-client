@@ -66,13 +66,15 @@
             gap: $gap;
 
             .price {
+                width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 font-size: $font-small;
             }
 
-            button {
+            a {
+                text-decoration: none;
                 padding: $padding;
                 background-color: $secondary-color;
                 border: none;

@@ -27,12 +27,11 @@ const Product = () => {
   const { addToCart } = useCart();
   const { addToWishlist, isInWishlist, removeFromWishlist } = useWishlist();
 
-  async function getData() {
-    const product = await axios.get(`${server}/data/product/${id}`);
-    setData(product.data);
-  }
-
   useEffect(() => {
+    async function getData() {
+      const product = await axios.get(`${server}/data/product/${id}`);
+      setData(product.data);
+    }
     getData();
   }, [id]);
 
@@ -182,30 +181,6 @@ const Product = () => {
                           color === "white" ? "color" : ""
                         }`}
                         onClick={() => setColor("white")}
-                      ></div>
-                      <div
-                        className={`option yellow ${
-                          color === "yellow" ? "color" : ""
-                        }`}
-                        onClick={() => setColor("yellow")}
-                      ></div>
-                      <div
-                        className={`option olivegreen ${
-                          color === "olivegreen" ? "color" : ""
-                        }`}
-                        onClick={() => setColor("olivegreen")}
-                      ></div>
-                      <div
-                        className={`option royalblue ${
-                          color === "royalblue" ? "color" : ""
-                        }`}
-                        onClick={() => setColor("royalblue")}
-                      ></div>
-                      <div
-                        className={`option green ${
-                          color === "green" ? "color" : ""
-                        }`}
-                        onClick={() => setColor("green")}
                       ></div>
                     </div>
                   </>

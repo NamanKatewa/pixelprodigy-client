@@ -5,8 +5,7 @@ import { useShowCart } from "../../context/showCartContext";
 import CartItem from "../CartItem/CartItem";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import toast from "react-hot-toast";
-import axios from "axios";
-import { server } from "../../variables";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cart, clearCart, getTotal } = useCart();
@@ -39,25 +38,10 @@ const Cart = () => {
             <h4>Total</h4>
             <h4> ₹{getTotal()}</h4>
           </div>
-          <button
-            onClick={async () => {
-              if (cart.length < 1) {
-                toast.error("Cart is Empty");
-              } else {
-                const url = await axios.post(`${server}/order/checkout`, {
-                  items: cart,
-                });
-                if (url.status === 200) {
-                  window.location.href = url.data;
-                } else {
-                  toast.error("Something went wrong");
-                }
-              }
-            }}
-          >
+          <Link to="/checkout" onClick={() => closeCart()}>
             Checkout
             <ShoppingCartCheckoutIcon />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

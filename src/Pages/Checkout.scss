@@ -1,0 +1,61 @@
+@import "/src/variable.scss";
+
+.checkout {
+    padding: $padding;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            gap: $gap-small;
+
+            label {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            input {
+                background-color: transparent;
+                padding: $padding-medium;
+                border: $border-width-small solid $secondary-color;
+                border-radius: $border-radius-small;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            &>span {
+                color: $accent-color-2;
+                font-weight: 500;
+            }
+
+            .contact {
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        button {
+            cursor: pointer;
+            padding: $padding;
+            background-color: $secondary-color;
+            color: $primary-color;
+            border: $border-width-small solid $secondary-color;
+            border-radius: $border-radius;
+            letter-spacing: 2px;
+            font-size: 20px;
+
+        }
+    }
+
+}
