@@ -36,6 +36,10 @@
                     flex-direction: column;
                     gap: $gap;
 
+                    h1 {
+                        padding-right: 20px;
+                    }
+
                     .like {
                         position: absolute;
                         right: $position-small;
