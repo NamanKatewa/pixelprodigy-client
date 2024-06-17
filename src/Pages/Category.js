@@ -24,7 +24,7 @@ const Category = () => {
 
   return (
     <div className="category">
-      <h1>Maps</h1>
+      <h1>{data && data.title}</h1>
       <div className="products">
         {data && data.products.map((d) => <ProductCard key={d.id} data={d} />)}
       </div>
