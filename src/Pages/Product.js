@@ -12,6 +12,7 @@ import toast from "react-hot-toast";
 import { useWishlist } from "../context/wishlistContext";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Slider from "../Components/Slider/Slider";
+import { ColorExtractor } from "react-color-extractor";
 
 const Product = () => {
   const [data, setData] = useState();
@@ -26,6 +27,7 @@ const Product = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
   const { addToWishlist, isInWishlist, removeFromWishlist } = useWishlist();
+  const [backColor, setBackColor] = useState("transparent");
 
   useEffect(() => {
     async function getData() {
@@ -34,6 +36,7 @@ const Product = () => {
     }
     getData();
   }, [id]);
+  console.log(backColor);
 
   useEffect(() => {
     setFrameSizes(data?.frameSizes);
@@ -46,14 +49,21 @@ const Product = () => {
   }, [data]);
 
   return (
-    <div className="product">
+    <div
+      className="product"
+      style={{
+        background: `radial-gradient(${backColor[0]}33, ${backColor[1]}33)`,
+      }}
+    >
       {data && (
         <>
           <div className="details">
             <div className="images">
               <div className="title">
                 <div className="poster">
-                  <img src={data.posterImg} alt="" />
+                  <ColorExtractor getColors={(colors) => setBackColor(colors)}>
+                    <img src={data.posterImg} alt="" />
+                  </ColorExtractor>
                 </div>
                 <div className="name">
                   {isInWishlist(data.id) ? (

@@ -18,6 +18,7 @@ body {
 
 ::-webkit-scrollbar-track {
   background: $primary-color;
+  border-radius: $border-radius;
 }
 
 ::-webkit-scrollbar-thumb {
