@@ -11,5 +11,9 @@
         gap: $gap;
         overflow-x: scroll;
         padding-bottom: $padding;
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
     }
 }
