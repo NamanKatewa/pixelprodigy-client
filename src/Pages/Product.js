@@ -66,13 +66,15 @@ const Product = () => {
     getBackColor();
   }, [data]);
 
+  const backgroundStyle =
+    backColor.length >= 2
+      ? {
+          background: `radial-gradient(${backColor[0].hex}33, ${backColor[1].hex}33)`,
+        }
+      : {};
+
   return (
-    <div
-      className="product"
-      style={{
-        background: `radial-gradient(${backColor[0].hex}33, ${backColor[1].hex}33)`,
-      }}
-    >
+    <div className="product" style={backgroundStyle}>
       {data && (
         <>
           <div className="details">
