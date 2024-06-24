@@ -12,7 +12,7 @@ import toast from "react-hot-toast";
 import { useWishlist } from "../context/wishlistContext";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Slider from "../Components/Slider/Slider";
-import { ColorExtractor } from "react-color-extractor";
+import { extractColors } from "extract-colors";
 
 const Product = () => {
   const [data, setData] = useState();
@@ -27,7 +27,7 @@ const Product = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
   const { addToWishlist, isInWishlist, removeFromWishlist } = useWishlist();
-  const [backColor, setBackColor] = useState("transparent");
+  const [backColor, setBackColor] = useState([]);
 
   useEffect(() => {
     async function getData() {
@@ -36,9 +36,26 @@ const Product = () => {
     }
     getData();
   }, [id]);
-  console.log(backColor);
 
   useEffect(() => {
+    async function getBackColor() {
+      if (data && data.posterImg) {
+        const img = new Image();
+        img.crossOrigin = "Anonymous";
+        img.src = data.posterImg;
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          canvas.width = img.width;
+          canvas.height = img.height;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, img.width, img.height);
+          extractColors(canvas.toDataURL()).then((colors) => {
+            setBackColor(colors);
+          });
+        };
+      }
+    }
+
     setFrameSizes(data?.frameSizes);
     setNoFrameSizes(data?.noFrameSizes);
     setSize({
@@ -46,13 +63,14 @@ const Product = () => {
     });
     setQuantity(1);
     setColor("Black");
+    getBackColor();
   }, [data]);
 
   return (
     <div
       className="product"
       style={{
-        background: `radial-gradient(${backColor[0]}33, ${backColor[1]}33)`,
+        background: `radial-gradient(${backColor[0].hex}33, ${backColor[1].hex}33)`,
       }}
     >
       {data && (
@@ -61,9 +79,7 @@ const Product = () => {
             <div className="images">
               <div className="title">
                 <div className="poster">
-                  <ColorExtractor getColors={(colors) => setBackColor(colors)}>
-                    <img src={data.posterImg} alt="" />
-                  </ColorExtractor>
+                  <img src={data.posterImg} alt="" />
                 </div>
                 <div className="name">
                   {isInWishlist(data.id) ? (
