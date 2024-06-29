@@ -21,16 +21,21 @@
         left: 0;
         right: 0;
         background-image: linear-gradient(to bottom, #00000000, #00000000, #00000000, #00000098, #000000c3);
+
     }
 
     .info {
+        backdrop-filter: blur(10px) saturate(200%);
+        -webkit-backdrop-filter: blur(10px) saturate(200%);
         position: absolute;
-        bottom: $position-small;
-        left: $position-small;
+        bottom: 0;
+        left: 0;
+        right: 0;
         color: #f9fafa;
         display: flex;
         flex-direction: column;
         gap: $gap;
+        padding: $padding;
 
         a {
             background-color: $primary-color;

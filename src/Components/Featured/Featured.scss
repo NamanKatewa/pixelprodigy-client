@@ -14,11 +14,13 @@
     }
 
     .info {
-        color: $secondary-color;
+        color: $accent-color-1;
         position: absolute;
         bottom: $position-small;
         left: $position-small;
-        background-color: $primary-color;
+        backdrop-filter: blur(30px) saturate(200%);
+        -webkit-backdrop-filter: blur(30px) saturate(200%);
+        background-color: rgba(51, 47, 47, 0.434);
         border-radius: $border-radius;
         padding: $padding;
         display: flex;
