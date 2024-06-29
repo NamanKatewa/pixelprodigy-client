@@ -251,6 +251,7 @@ const Product = () => {
                         frame: frame,
                         color: color,
                       });
+                      toast.success("Added to Cart");
                     } else {
                       toast.error("Please Select a Size");
                     }

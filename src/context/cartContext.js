@@ -20,7 +20,7 @@ export const CartProvider = ({ children }) => {
     setCart((prevCart) => {
       const existingItemIndex = prevCart.findIndex(
         (cartItem) =>
-          cartItem.id === item.id && cartItem.size.idd === item.size.id
+          cartItem.id === item.id && cartItem.size.id === item.size.id
       );
       if (existingItemIndex !== -1) {
         const updatedCart = [...prevCart];
@@ -28,8 +28,10 @@ export const CartProvider = ({ children }) => {
           ...updatedCart[existingItemIndex],
           quantity: updatedCart[existingItemIndex].quantity + item.quantity,
         };
+        console.log("item exists");
         return updatedCart;
       } else {
+        console.log("item added");
         return [...prevCart, item];
       }
     });
