@@ -26,6 +26,12 @@ const ContactUs = () => {
           New Delhi, 110075 <br />
           India
         </p>
+        <span>Instagram</span>
+        <p>
+          <a href="https://www.instagram.com/_pixel__prodigy/">
+            _pixel__prodigy
+          </a>
+        </p>
       </div>
     </div>
   );
